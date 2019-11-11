@@ -1,0 +1,884 @@
+;	STMicroelectronics Project file
+
+[Version]
+Keyword=ST7Project
+Number=1.3
+
+[Project]
+Name=stvd_project
+Toolset=STM8 Cosmic
+
+[Config]
+0=Config.0
+1=Config.1
+
+[Config.0]
+ConfigName=Debug
+Target=$(ProjectSFile).elf
+OutputFolder=Debug
+Debug=$(TargetFName)
+
+[Config.1]
+ConfigName=Release
+Target=stvd_project.elf
+OutputFolder=Release
+Debug=$(TargetFName)
+
+[Root]
+ElemType=Project
+PathName=stvd_project
+Child=Root.LoraNode
+Config.0=Root.Config.0
+Config.1=Root.Config.1
+
+[Root.Config.0]
+Settings.0.0=Root.Config.0.Settings.0
+Settings.0.1=Root.Config.0.Settings.1
+Settings.0.2=Root.Config.0.Settings.2
+Settings.0.3=Root.Config.0.Settings.3
+Settings.0.4=Root.Config.0.Settings.4
+Settings.0.5=Root.Config.0.Settings.5
+Settings.0.6=Root.Config.0.Settings.6
+Settings.0.7=Root.Config.0.Settings.7
+Settings.0.8=Root.Config.0.Settings.8
+
+[Root.Config.1]
+Settings.1.0=Root.Config.1.Settings.0
+Settings.1.1=Root.Config.1.Settings.1
+Settings.1.2=Root.Config.1.Settings.2
+Settings.1.3=Root.Config.1.Settings.3
+Settings.1.4=Root.Config.1.Settings.4
+Settings.1.5=Root.Config.1.Settings.5
+Settings.1.6=Root.Config.1.Settings.6
+Settings.1.7=Root.Config.1.Settings.7
+Settings.1.8=Root.Config.1.Settings.8
+
+[Root.Config.0.Settings.0]
+String.6.0=2018,12,25,14,17,21
+String.100.0=ST Assembler Linker
+String.100.1=ST7 Cosmic
+String.100.2=STM8 Cosmic
+String.100.3=ST7 Metrowerks V1.1
+String.100.4=Raisonance
+String.101.0=STM8 Cosmic
+String.102.0=C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8
+String.103.0=
+String.104.0=Hstm8
+String.105.0=Lib
+String.106.0=Debug
+String.107.0=$(ProjectSFile).elf
+Int.108=1
+
+[Root.Config.0.Settings.1]
+String.6.0=2010,6,7,11,47,28
+String.100.0=$(TargetFName)
+String.101.0=
+String.102.0=
+String.103.0=.\;..\..;..\..\inc;..\..\src;..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc;..\..\..\..\libraries\stm8l15x_stdperiph_driver\src;..\..\..\..\loramac-node\src\boards;..\..\..\..\loramac-node\src\boards\asr6505;..\..\..\..\loramac-node\src\radio;..\..\..\..\loramac-node\src\radio\sx126x;..\..\..\..\loramac-node\src\system;..\..\..\..\loramac-node\src\boards\mcu;..\..\..\..\loramac-node\src\system\crypto;..\..\..\..\loramac-node\src\apps\ping-pong\asr6505;
+
+[Root.Config.0.Settings.2]
+String.2.0=
+String.6.0=2019,1,25,15,23,20
+String.100.0=STM8L152M8
+
+[Root.Config.0.Settings.3]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 +modsl -customDebCompat -customC-pp -customLst -l -dREGION_CN470 -dUSE_MODEM_LORA -i..\..\..\..\loramac-node\src\system\crypto -i..\..\..\..\loramac-node\src\system -i..\..\..\..\loramac-node\src\radio\sx126x -i..\..\..\..\loramac-node\src\radio -i..\..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\apps\loramac\classa\asr6505 -i..\..\..\loramac-node\src\system\crypto -i..\..\..\loramac-node\src\mac\region -i..\..\..\loramac-node\src\mac -i..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\loramac-node\src\radio\sx126x -i..\..\..\loramac-node\src\radio -i..\..\..\loramac-node\src\system -i..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\..\inc -i..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\.. $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2019,3,22,9,56,23
+
+[Root.Config.0.Settings.4]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.Config.0.Settings.5]
+String.2.0=Running Pre-Link step
+String.6.0=2010,6,7,11,47,28
+String.8.0=
+
+[Root.Config.0.Settings.6]
+String.2.0=Running Linker
+String.3.0=clnk $(ToolsetLibOpts) -o $(OutputPath)$(TargetSName).sm8 -fakeInteger -fakeFloat -fakeLib..\..\..\..\Libraries\asrlib\COSMIC\asrlib.o -fakeOutFile$(ProjectSFile).elf -fakeRunConv -fakeStartupcrtsi.sm8 -fakeAutoGen -fakeVectFile..\..\src\stm8_interrupt_vector.c -fakeVectAddr0x8000 -customMapFile -customMapFile-m$(OutputPath)$(TargetSName).map -customMapAddress -customCfgFile$(OutputPath)$(TargetSName).lkf 
+String.3.1=cvdwarf $(OutputPath)$(TargetSName).sm8
+String.4.0=$(OutputPath)$(TargetFName)
+String.5.0=$(OutputPath)$(ProjectSFile).elf $(OutputPath)$(TargetSName).map
+String.6.0=2019,5,14,16,33,48
+String.100.0=
+String.101.0=crtsi.st7
+String.102.0=+seg .const -b 0x8080 -m 0xff80 -n .const -it
+String.102.1=+seg .text -a .const -n .text
+String.102.2=+seg .eeprom -b 0x1000 -m 0x800 -n .eeprom
+String.102.3=+seg .bsct -b 0x0 -m 0x100 -n .bsct
+String.102.4=+seg .ubsct -a .bsct -n .ubsct
+String.102.5=+seg .bit -a .ubsct -n .bit -id
+String.102.6=+seg .share -a .bit -n .share -is
+String.102.7=+seg .data -b 0x100 -m 0xcff -n .data
+String.102.8=+seg .bss -a .data -n .bss
+String.103.0=Code,Constants[0x8080-0x17fff]=.const,.text
+String.103.1=Eeprom[0x1000-0x17ff]=.eeprom
+String.103.2=Zero Page[0x0-0xff]=.bsct,.ubsct,.bit,.share
+String.103.3=Ram[0x100-0xdfe]=.data,.bss
+String.104.0=0xfff
+String.105.0=libfsl.sm8;libisl.sm8;libm.sm8
+Int.0=0
+Int.1=0
+
+[Root.Config.0.Settings.7]
+String.2.0=Running Post-Build step
+String.3.0=chex -o $(OutputPath)$(TargetSName).s19 $(OutputPath)$(TargetSName).sm8
+String.6.0=2010,6,7,11,47,28
+
+[Root.Config.0.Settings.8]
+String.2.0=Performing Custom Build on $(InputFile)
+String.6.0=2010,6,7,11,47,28
+
+[Root.Config.1.Settings.0]
+String.6.0=2010,6,7,11,47,28
+String.100.0=ST Assembler Linker
+String.100.1=ST7 Cosmic
+String.100.2=STM8 Cosmic
+String.100.3=ST7 Metrowerks V1.1
+String.100.4=Raisonance
+String.101.0=STM8 Cosmic
+String.102.0=C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8
+String.103.0=
+String.104.0=Hstm8
+String.105.0=Lib
+String.106.0=Release
+String.107.0=stvd_project.elf
+Int.108=0
+
+[Root.Config.1.Settings.1]
+String.6.0=2010,6,7,11,47,28
+String.100.0=$(TargetFName)
+String.101.0=
+String.103.0=.\;..\..;..\..\inc;..\..\src;..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc;..\..\..\..\libraries\stm8l15x_stdperiph_driver\src;..\..\..\..\loramac-node\src\boards;..\..\..\..\loramac-node\src\boards\asr6505;..\..\..\..\loramac-node\src\radio;..\..\..\..\loramac-node\src\radio\sx126x;..\..\..\..\loramac-node\src\system;..\..\..\..\loramac-node\src\boards\mcu;..\..\..\..\loramac-node\src\system\crypto;..\..\..\..\loramac-node\src\apps\ping-pong\asr6505;
+
+[Root.Config.1.Settings.2]
+String.2.0=
+String.6.0=2019,1,25,15,23,20
+String.100.0=STM8L152M8
+
+[Root.Config.1.Settings.3]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 -i..\..\..\..\loramac-node\src\system\crypto  -i..\..\..\..\loramac-node\src\system  -i..\..\..\..\loramac-node\src\radio\sx126x  -i..\..\..\..\loramac-node\src\radio  -i..\..\..\..\loramac-node\src\boards\asr6505  -i..\..\..\..\loramac-node\src\boards  -i..\..\..\loramac-node\src\apps\loramac\classa\asr6505 -i..\..\..\loramac-node\src\system\crypto -i..\..\..\loramac-node\src\mac\region -i..\..\..\loramac-node\src\mac -i..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\loramac-node\src\radio\sx126x -i..\..\..\loramac-node\src\radio -i..\..\..\loramac-node\src\system -i..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\..\inc -i..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\.. +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.Config.1.Settings.4]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.Config.1.Settings.5]
+String.2.0=Running Pre-Link step
+String.6.0=2010,6,7,11,47,28
+
+[Root.Config.1.Settings.6]
+String.2.0=Running Linker
+String.3.0=clnk -fakeRunConv -fakeInteger -fakeAutoGen $(ToolsetLibOpts) -o $(OutputPath)$(TargetSName).sm8 -fakeOutFile$(ProjectSFile).elf -customCfgFile $(OutputPath)$(TargetSName).lkf -fakeVectFile..\..\src\stm8_interrupt_vector.c -fakeStartupcrtsi0.sm8 
+String.3.1=cvdwarf $(OutputPath)$(TargetSName).sm8 -fakeVectAddr0x8000
+String.4.0=$(OutputPath)$(TargetFName)
+String.5.0=$(OutputPath)$(TargetSName).map $(OutputPath)$(TargetSName).st7 $(OutputPath)$(TargetSName).s19
+String.6.0=2019,1,25,15,23,20
+String.101.0=crtsi.st7
+String.102.0=+seg .const -b 0x8080 -m 0xff80 -n .const -it 
+String.102.1=+seg .text -a .const -n .text 
+String.102.2=+seg .eeprom -b 0x1000 -m 0x800 -n .eeprom 
+String.102.3=+seg .bsct -b 0x0 -m 0x100 -n .bsct 
+String.102.4=+seg .ubsct -a .bsct -n .ubsct 
+String.102.5=+seg .bit -a .ubsct -n .bit -id 
+String.102.6=+seg .share -a .bit -n .share -is 
+String.102.7=+seg .data -b 0x100 -m 0xcff -n .data 
+String.102.8=+seg .bss -a .data -n .bss
+String.103.0=Code,Constants[0x8080-0x17fff]=.const,.text
+String.103.1=Eeprom[0x1000-0x17ff]=.eeprom
+String.103.2=Zero Page[0x0-0xff]=.bsct,.ubsct,.bit,.share
+String.103.3=Ram[0x100-0xdfe]=.data,.bss
+String.104.0=0xfff
+Int.0=0
+Int.1=0
+
+[Root.Config.1.Settings.7]
+String.2.0=Running Post-Build step
+String.3.0=chex -o $(OutputPath)$(TargetSName).s19 $(OutputPath)$(TargetSName).sm8
+String.6.0=2010,6,7,11,47,28
+
+[Root.Config.1.Settings.8]
+String.2.0=Performing Custom Build on $(InputFile)
+String.6.0=2010,6,7,11,47,28
+
+[Root.LoraNode]
+ElemType=Folder
+PathName=LoraNode
+Child=Root.LoraNode.LoraNode\board
+Next=Root.STM8L15x_StdPeriph_Driver
+Config.0=Root.LoraNode.Config.0
+Config.1=Root.LoraNode.Config.1
+
+[Root.LoraNode.Config.0]
+Settings.0.0=Root.LoraNode.Config.0.Settings.0
+Settings.0.1=Root.LoraNode.Config.0.Settings.1
+Settings.0.2=Root.LoraNode.Config.0.Settings.2
+Settings.0.3=Root.LoraNode.Config.0.Settings.3
+
+[Root.LoraNode.Config.1]
+Settings.1.0=Root.LoraNode.Config.1.Settings.0
+Settings.1.1=Root.LoraNode.Config.1.Settings.1
+Settings.1.2=Root.LoraNode.Config.1.Settings.2
+Settings.1.3=Root.LoraNode.Config.1.Settings.3
+
+[Root.LoraNode.Config.0.Settings.0]
+String.6.0=2018,12,11,9,32,21
+String.8.0=Debug
+Int.0=0
+Int.1=0
+
+[Root.LoraNode.Config.0.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 +modsl -customDebCompat -customC-pp -customLst -l -dREGION_CN470 -dUSE_MODEM_LORA -i..\..\..\..\loramac-node\src\system\crypto -i..\..\..\..\loramac-node\src\system -i..\..\..\..\loramac-node\src\radio\sx126x -i..\..\..\..\loramac-node\src\radio -i..\..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\apps\loramac\classa\asr6505 -i..\..\..\loramac-node\src\system\crypto -i..\..\..\loramac-node\src\mac\region -i..\..\..\loramac-node\src\mac -i..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\loramac-node\src\radio\sx126x -i..\..\..\loramac-node\src\radio -i..\..\..\loramac-node\src\system -i..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\..\inc -i..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\.. $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2019,3,22,9,56,23
+
+[Root.LoraNode.Config.0.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.LoraNode.Config.0.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,6,7,11,47,28
+
+[Root.LoraNode.Config.1.Settings.0]
+String.6.0=2018,12,11,9,32,21
+String.8.0=Release
+Int.0=0
+Int.1=0
+
+[Root.LoraNode.Config.1.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 -i..\..\..\..\loramac-node\src\system\crypto  -i..\..\..\..\loramac-node\src\system  -i..\..\..\..\loramac-node\src\radio\sx126x  -i..\..\..\..\loramac-node\src\radio  -i..\..\..\..\loramac-node\src\boards\asr6505  -i..\..\..\..\loramac-node\src\boards  -i..\..\..\loramac-node\src\apps\loramac\classa\asr6505 -i..\..\..\loramac-node\src\system\crypto -i..\..\..\loramac-node\src\mac\region -i..\..\..\loramac-node\src\mac -i..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\loramac-node\src\radio\sx126x -i..\..\..\loramac-node\src\radio -i..\..\..\loramac-node\src\system -i..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\..\inc -i..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\.. +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.LoraNode.Config.1.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.LoraNode.Config.1.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,6,7,11,47,28
+
+[Root.LoraNode.LoraNode\board]
+ElemType=Folder
+PathName=LoraNode\board
+Child=Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\utilities.h
+Next=Root.LoraNode.LoraNode\radio
+
+[Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\utilities.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\utilities.h
+Next=Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\sx126x-board.h
+
+[Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\sx126x-board.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\sx126x-board.h
+Next=Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\spi-board.h
+
+[Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\spi-board.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\spi-board.h
+Next=Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\rtc-board.h
+
+[Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\rtc-board.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\rtc-board.h
+Next=Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\pinname-board.h
+
+[Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\pinname-board.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\pinname-board.h
+Next=Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\gpio-board.h
+
+[Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\gpio-board.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\gpio-board.h
+Next=Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\delay-board.h
+
+[Root.LoraNode.LoraNode\board...\..\..\..\loramac-node\src\boards\delay-board.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\delay-board.h
+Next=Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505
+
+[Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505]
+ElemType=Folder
+PathName=LoraNode\board\ASR6505
+Child=Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\sx1262-board.c
+
+[Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\sx1262-board.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\asr6505\sx1262-board.c
+Next=Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\spi-board.c
+
+[Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\spi-board.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\asr6505\spi-board.c
+Next=Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\gpio-board.c
+
+[Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\gpio-board.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\asr6505\gpio-board.c
+Next=Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\delay-board.c
+
+[Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\delay-board.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\asr6505\delay-board.c
+Next=Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\board-config.h
+
+[Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\board-config.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\asr6505\board-config.h
+Next=Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\board.c
+
+[Root.LoraNode.LoraNode\board.LoraNode\board\ASR6505...\..\..\..\loramac-node\src\boards\asr6505\board.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\asr6505\board.c
+
+[Root.LoraNode.LoraNode\radio]
+ElemType=Folder
+PathName=LoraNode\radio
+Child=Root.LoraNode.LoraNode\radio...\..\..\..\loramac-node\src\radio\sx126x\sx126x.h
+Next=Root.LoraNode.LoraNode\system
+
+[Root.LoraNode.LoraNode\radio...\..\..\..\loramac-node\src\radio\sx126x\sx126x.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\radio\sx126x\sx126x.h
+Next=Root.LoraNode.LoraNode\radio...\..\..\..\loramac-node\src\radio\sx126x\sx126x.c
+
+[Root.LoraNode.LoraNode\radio...\..\..\..\loramac-node\src\radio\sx126x\sx126x.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\radio\sx126x\sx126x.c
+Next=Root.LoraNode.LoraNode\radio...\..\..\..\loramac-node\src\radio\sx126x\radio.c
+
+[Root.LoraNode.LoraNode\radio...\..\..\..\loramac-node\src\radio\sx126x\radio.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\radio\sx126x\radio.c
+Next=Root.LoraNode.LoraNode\radio...\..\..\..\loramac-node\src\radio\radio.h
+
+[Root.LoraNode.LoraNode\radio...\..\..\..\loramac-node\src\radio\radio.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\radio\radio.h
+
+[Root.LoraNode.LoraNode\system]
+ElemType=Folder
+PathName=LoraNode\system
+Child=Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\boards\mcu\utilities.c
+
+[Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\boards\mcu\utilities.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\boards\mcu\utilities.c
+Next=Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\timer.h
+
+[Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\timer.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\timer.h
+Next=Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\timer.c
+
+[Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\timer.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\timer.c
+Next=Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\spi.h
+
+[Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\spi.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\spi.h
+Next=Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\gpio.h
+
+[Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\gpio.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\gpio.h
+Next=Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\gpio.c
+
+[Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\gpio.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\gpio.c
+Next=Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\delay.h
+
+[Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\delay.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\delay.h
+Next=Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\delay.c
+
+[Root.LoraNode.LoraNode\system...\..\..\..\loramac-node\src\system\delay.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\delay.c
+Next=Root.LoraNode.LoraNode\system.LoraNode\system\crypto
+
+[Root.LoraNode.LoraNode\system.LoraNode\system\crypto]
+ElemType=Folder
+PathName=LoraNode\system\crypto
+Child=Root.LoraNode.LoraNode\system.LoraNode\system\crypto...\..\..\..\loramac-node\src\system\crypto\cmac.h
+
+[Root.LoraNode.LoraNode\system.LoraNode\system\crypto...\..\..\..\loramac-node\src\system\crypto\cmac.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\crypto\cmac.h
+Next=Root.LoraNode.LoraNode\system.LoraNode\system\crypto...\..\..\..\loramac-node\src\system\crypto\cmac.c
+
+[Root.LoraNode.LoraNode\system.LoraNode\system\crypto...\..\..\..\loramac-node\src\system\crypto\cmac.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\crypto\cmac.c
+Next=Root.LoraNode.LoraNode\system.LoraNode\system\crypto...\..\..\..\loramac-node\src\system\crypto\aes.h
+
+[Root.LoraNode.LoraNode\system.LoraNode\system\crypto...\..\..\..\loramac-node\src\system\crypto\aes.h]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\crypto\aes.h
+Next=Root.LoraNode.LoraNode\system.LoraNode\system\crypto...\..\..\..\loramac-node\src\system\crypto\aes.c
+
+[Root.LoraNode.LoraNode\system.LoraNode\system\crypto...\..\..\..\loramac-node\src\system\crypto\aes.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\system\crypto\aes.c
+
+[Root.STM8L15x_StdPeriph_Driver]
+ElemType=Folder
+PathName=STM8L15x_StdPeriph_Driver
+Child=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc
+Next=Root.User
+Config.0=Root.STM8L15x_StdPeriph_Driver.Config.0
+Config.1=Root.STM8L15x_StdPeriph_Driver.Config.1
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0]
+Settings.0.0=Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.0
+Settings.0.1=Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.1
+Settings.0.2=Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.2
+Settings.0.3=Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.3
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1]
+Settings.1.0=Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.0
+Settings.1.1=Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.1
+Settings.1.2=Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.2
+Settings.1.3=Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.3
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.0]
+String.6.0=2010,7,22,14,14,38
+String.8.0=Debug
+Int.0=0
+Int.1=0
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 +modsl -customDebCompat -customC-pp -customLst -l -dREGION_CN470 -dUSE_MODEM_LORA -i..\..\..\..\loramac-node\src\system\crypto -i..\..\..\..\loramac-node\src\system -i..\..\..\..\loramac-node\src\radio\sx126x -i..\..\..\..\loramac-node\src\radio -i..\..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\apps\loramac\classa\asr6505 -i..\..\..\loramac-node\src\system\crypto -i..\..\..\loramac-node\src\mac\region -i..\..\..\loramac-node\src\mac -i..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\loramac-node\src\radio\sx126x -i..\..\..\loramac-node\src\radio -i..\..\..\loramac-node\src\system -i..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\..\inc -i..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\.. $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2019,3,22,9,56,23
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.STM8L15x_StdPeriph_Driver.Config.0.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,6,7,11,47,28
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.0]
+String.6.0=2010,7,22,14,14,38
+String.8.0=Release
+Int.0=0
+Int.1=0
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 -i..\..\..\..\loramac-node\src\system\crypto  -i..\..\..\..\loramac-node\src\system  -i..\..\..\..\loramac-node\src\radio\sx126x  -i..\..\..\..\loramac-node\src\radio  -i..\..\..\..\loramac-node\src\boards\asr6505  -i..\..\..\..\loramac-node\src\boards  -i..\..\..\loramac-node\src\apps\loramac\classa\asr6505 -i..\..\..\loramac-node\src\system\crypto -i..\..\..\loramac-node\src\mac\region -i..\..\..\loramac-node\src\mac -i..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\loramac-node\src\radio\sx126x -i..\..\..\loramac-node\src\radio -i..\..\..\loramac-node\src\system -i..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\..\inc -i..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\.. +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.STM8L15x_StdPeriph_Driver.Config.1.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,6,7,11,47,28
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc]
+ElemType=Folder
+PathName=STM8L15x_StdPeriph_Driver\inc
+Child=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_wwdg.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_wwdg.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_wwdg.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_wfe.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_wfe.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_wfe.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_usart.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_usart.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_usart.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim5.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim5.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim5.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim4.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim3.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim2.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim1.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim1.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_tim1.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_syscfg.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_spi.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_spi.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_spi.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_rtc.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_rtc.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_rtc.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_rst.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_rst.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_rst.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_pwr.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_pwr.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_pwr.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_lcd.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_lcd.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_lcd.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_iwdg.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_iwdg.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_iwdg.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_itc.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_irtim.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_irtim.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_irtim.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_i2c.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_i2c.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_i2c.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_gpio.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_gpio.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_gpio.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_flash.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_exti.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_exti.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_exti.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_dma.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_dma.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_dma.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_dac.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_comp.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_comp.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_comp.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_clk.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_beep.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_beep.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_beep.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_aes.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_aes.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_aes.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x_adc.h
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\inc...\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x.h]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc\stm8l15x.h
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src]
+ElemType=Folder
+PathName=STM8L15x_StdPeriph_Driver\src
+Child=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_flash.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_flash.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_flash.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_pwr.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_pwr.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_pwr.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_wwdg.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_wwdg.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_wwdg.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_usart.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_usart.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_usart.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim5.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim5.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim5.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim4.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim3.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim3.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim3.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim2.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim1.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim1.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_tim1.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_syscfg.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_syscfg.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_syscfg.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_spi.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_spi.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_spi.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_rtc.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_rtc.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_rtc.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_iwdg.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_iwdg.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_iwdg.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_i2c.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_gpio.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_gpio.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_gpio.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_exti.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_exti.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_exti.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_dma.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_dma.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_dma.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_clk.c
+Next=Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_aes.c
+
+[Root.STM8L15x_StdPeriph_Driver.STM8L15x_StdPeriph_Driver\src...\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_aes.c]
+ElemType=File
+PathName=..\..\..\..\libraries\stm8l15x_stdperiph_driver\src\stm8l15x_aes.c
+
+[Root.User]
+ElemType=Folder
+PathName=User
+Child=Root.User.User\inc
+Config.0=Root.User.Config.0
+Config.1=Root.User.Config.1
+
+[Root.User.Config.0]
+Settings.0.0=Root.User.Config.0.Settings.0
+Settings.0.1=Root.User.Config.0.Settings.1
+Settings.0.2=Root.User.Config.0.Settings.2
+Settings.0.3=Root.User.Config.0.Settings.3
+
+[Root.User.Config.1]
+Settings.1.0=Root.User.Config.1.Settings.0
+Settings.1.1=Root.User.Config.1.Settings.1
+Settings.1.2=Root.User.Config.1.Settings.2
+Settings.1.3=Root.User.Config.1.Settings.3
+
+[Root.User.Config.0.Settings.0]
+String.6.0=2010,7,22,14,14,47
+String.8.0=Debug
+Int.0=0
+Int.1=0
+
+[Root.User.Config.0.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 +modsl -customDebCompat -customC-pp -customLst -l -dREGION_CN470 -dUSE_MODEM_LORA -i..\..\..\..\loramac-node\src\system\crypto -i..\..\..\..\loramac-node\src\system -i..\..\..\..\loramac-node\src\radio\sx126x -i..\..\..\..\loramac-node\src\radio -i..\..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\apps\loramac\classa\asr6505 -i..\..\..\loramac-node\src\system\crypto -i..\..\..\loramac-node\src\mac\region -i..\..\..\loramac-node\src\mac -i..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\loramac-node\src\radio\sx126x -i..\..\..\loramac-node\src\radio -i..\..\..\loramac-node\src\system -i..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\..\inc -i..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\.. $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2019,3,22,9,56,23
+
+[Root.User.Config.0.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 -xx -l $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.User.Config.0.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,6,7,11,47,28
+
+[Root.User.Config.1.Settings.0]
+String.6.0=2010,7,22,14,14,47
+String.8.0=Release
+Int.0=0
+Int.1=0
+
+[Root.User.Config.1.Settings.1]
+String.2.0=Compiling $(InputFile)...
+String.3.0=cxstm8 -i..\..\..\..\loramac-node\src\system\crypto  -i..\..\..\..\loramac-node\src\system  -i..\..\..\..\loramac-node\src\radio\sx126x  -i..\..\..\..\loramac-node\src\radio  -i..\..\..\..\loramac-node\src\boards\asr6505  -i..\..\..\..\loramac-node\src\boards  -i..\..\..\loramac-node\src\apps\loramac\classa\asr6505 -i..\..\..\loramac-node\src\system\crypto -i..\..\..\loramac-node\src\mac\region -i..\..\..\loramac-node\src\mac -i..\..\..\loramac-node\src\boards -i..\..\..\loramac-node\src\boards\asr6505 -i..\..\..\loramac-node\src\radio\sx126x -i..\..\..\loramac-node\src\radio -i..\..\..\loramac-node\src\system -i..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\..\inc -i..\..\..\..\libraries\stm8l15x_stdperiph_driver\inc -i..\.. +mods0 -customC-pp $(ToolsetIncOpts) -cl$(IntermPath) -co$(IntermPath) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.User.Config.1.Settings.2]
+String.2.0=Assembling $(InputFile)...
+String.3.0=castm8 $(ToolsetIncOpts) -o$(IntermPath)$(InputName).$(ObjectExt) $(InputFile)
+String.4.0=$(IntermPath)$(InputName).$(ObjectExt)
+String.5.0=$(IntermPath)$(InputName).ls
+String.6.0=2010,6,7,11,47,28
+
+[Root.User.Config.1.Settings.3]
+String.2.0=Performing Custom Build on $(InputFile)
+String.3.0=
+String.4.0=
+String.5.0=
+String.6.0=2010,6,7,11,47,28
+
+[Root.User.User\inc]
+ElemType=Folder
+PathName=User\inc
+Child=Root.User.User\inc...\..\inc\stm8l15x_it.h
+Next=Root.User.User\src
+
+[Root.User.User\inc...\..\inc\stm8l15x_it.h]
+ElemType=File
+PathName=..\..\inc\stm8l15x_it.h
+
+[Root.User.User\src]
+ElemType=Folder
+PathName=User\src
+Child=Root.User.User\src...\..\..\..\loramac-node\src\apps\ping-pong\asr6505\main.c
+
+[Root.User.User\src...\..\..\..\loramac-node\src\apps\ping-pong\asr6505\main.c]
+ElemType=File
+PathName=..\..\..\..\loramac-node\src\apps\ping-pong\asr6505\main.c
+Next=Root.User.User\src...\..\src\stm8_interrupt_vector.c
+
+[Root.User.User\src...\..\src\stm8_interrupt_vector.c]
+ElemType=File
+PathName=..\..\src\stm8_interrupt_vector.c
+Next=Root.User.User\src...\..\src\stm8l15x_it.c
+
+[Root.User.User\src...\..\src\stm8l15x_it.c]
+ElemType=File
+PathName=..\..\src\stm8l15x_it.c

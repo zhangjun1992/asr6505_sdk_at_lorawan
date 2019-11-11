@@ -1,0 +1,22 @@
+{
+    "LWanDevKeys" : {
+        "OTAKeys" : {
+            "DevEui" : "d896e00008000002",
+            "AppEui" : "d896e0e00000709a",
+            "AppKey" : "ABB1EB0EC8105B9426FBFDB857EC6006"
+        }
+    },
+
+    "LWanDevConfig" : {
+        "ULDLMode" : "INTER",
+        "ClassMode" : "CLASS_A",
+        "FreqbandMask" : "0002"
+    },
+
+    "LWanMacConfig" : {
+        "ConfirmedMsg" : "true",
+        "Port" : "10",
+        "ReportMode" : "true",
+        "ReportInterval" : "30"
+    }
+}
