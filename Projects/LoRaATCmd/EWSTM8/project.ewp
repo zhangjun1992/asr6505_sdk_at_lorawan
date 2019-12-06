@@ -672,7 +672,7 @@
                 </option>
                 <option>
                     <name>IlinkAdditionalLibs</name>
-                    <state>$PROJ_DIR$\..\..\..\..\..\ASR6505_AT_RELEASE_67\ASR6505_AT_RELEASE_uartwakeup\ASR6505_AT_RELEASE\Libraries\asrlib\IAR\asrlib.a</state>
+                    <state>$PROJ_DIR$\..\..\..\Libraries\asrlib\IAR\asrlib.a</state>
                 </option>
                 <option>
                     <name>IlinkOverrideProgramEntryLabel</name>

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V3.10.1.201 for STM8                     06/Dec/2019  14:33:13
+# IAR ELF Linker V3.10.1.201 for STM8                     06/Dec/2019  14:39:52
 # Copyright 2010-2017 IAR Systems AB.
 #
 #    Output file  =  
@@ -8,7 +8,7 @@
 #    Map file     =  
 #        D:\6_workSpace\55_lora\4_node\3_ASR6505\7_code\github\asr6505_sdk_at_lorawan\Projects\LoRaATCmd\EWSTM8\Debug\List\project.map
 #    Command line =  
-#        -f C:\Users\yanke\AppData\Local\Temp\EWCBE3.tmp
+#        -f C:\Users\yanke\AppData\Local\Temp\EWE1E5.tmp
 #        (D:\6_workSpace\55_lora\4_node\3_ASR6505\7_code\github\asr6505_sdk_at_lorawan\Projects\LoRaATCmd\EWSTM8\Debug\Obj\aes.o
 #        D:\6_workSpace\55_lora\4_node\3_ASR6505\7_code\github\asr6505_sdk_at_lorawan\Projects\LoRaATCmd\EWSTM8\Debug\Obj\at_command.o
 #        D:\6_workSpace\55_lora\4_node\3_ASR6505\7_code\github\asr6505_sdk_at_lorawan\Projects\LoRaATCmd\EWSTM8\Debug\Obj\board.o
@@ -59,7 +59,7 @@
 #        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
 #        8.0\stm8\config\lnkstm8l152m8.icf" --config_def _CSTACK_SIZE=0x100
 #        --config_def _HEAP_SIZE=0x100
-#        D:\6_workSpace\55_lora\4_node\3_ASR6505\7_code\github\asr6505_sdk_at_lorawan\Projects\LoRaATCmd\EWSTM8\..\..\..\..\..\ASR6505_AT_RELEASE_67\ASR6505_AT_RELEASE_uartwakeup\ASR6505_AT_RELEASE\Libraries\asrlib\IAR\asrlib.a
+#        D:\6_workSpace\55_lora\4_node\3_ASR6505\7_code\github\asr6505_sdk_at_lorawan\Projects\LoRaATCmd\EWSTM8\..\..\..\Libraries\asrlib\IAR\asrlib.a
 #        --entry __iar_program_start --debug_lib)
 #
 ###############################################################################
