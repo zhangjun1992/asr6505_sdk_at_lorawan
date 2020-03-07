@@ -147,19 +147,16 @@
   */
 void USART_DeInit(USART_TypeDef* USARTx)
 {
-
   /* Clear the Idle Line Detected bit in the status register by a read
       to the USART_SR register followed by a Read to the USART_DR register */
   (void) USARTx->SR;
   (void) USARTx->DR;
-
   USARTx->BRR2 = USART_BRR2_RESET_VALUE;  /* Set USART_BRR2 to reset value 0x00 */
   USARTx->BRR1 = USART_BRR1_RESET_VALUE;  /* Set USART_BRR1 to reset value 0x00 */
-
   USARTx->CR1 = USART_CR1_RESET_VALUE;  /* Set USART_CR1 to reset value 0x00 */
   USARTx->CR2 = USART_CR2_RESET_VALUE;  /* Set USART_CR2 to reset value 0x00 */
   USARTx->CR3 = USART_CR3_RESET_VALUE;  /* Set USART_CR3 to reset value 0x00 */
-  USARTx->CR4 = USART_CR4_RESET_VALUE;  /* Set USART_CR4 to reset value 0x00 */
+  USARTx->CR4 = USART_CR4_RESET_VALUE;  /* Set USART_CR4 to reset value 0x00 */  
 }
 
 /**
@@ -1187,7 +1184,6 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, USART_IT_TypeDef USART_IT)
   /*< Clear RXNE or TC pending bit */
   USARTx->SR &= (uint8_t)(~USART_SR_TC);
 }
-
 
 /**
   * @}

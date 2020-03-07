@@ -314,6 +314,7 @@ static void mlme_confirm( MlmeConfirm_t *mlmeConfirm )
 static void mlme_indication( MlmeIndication_t *mlmeIndication )
 {
     switch( mlmeIndication->MlmeIndication )
+      
     {
         case MLME_SCHEDULE_UPLINK:
         {// The MAC signals that we shall provide an uplink as soon as possible

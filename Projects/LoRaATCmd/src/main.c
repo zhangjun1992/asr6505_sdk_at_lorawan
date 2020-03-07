@@ -40,8 +40,7 @@ static void LoraRxData( lora_AppData_t *AppData )
 
 int main( void )
 {
-    BoardInitMcu();
-    
+    BoardInitMcu();    
     lora_init(&LoRaMainCallbacks);  
     lora_fsm( );
     return 0;

@@ -26,6 +26,21 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+#if 0  //1 是串口1 0就定义后面的串口0
+#define COMn                        1
+#define EVAL_COM1                   USART3
+#define EVAL_COM1_GPIO              GPIOG
+#define EVAL_COM1_CLK               CLK_Peripheral_USART3
+#define EVAL_COM1_RxPin             GPIO_Pin_0
+#define EVAL_COM1_TxPin             GPIO_Pin_1
+#else
+#define COMn                        1
+#define EVAL_COM1                   USART2
+#define EVAL_COM1_GPIO              GPIOH
+#define EVAL_COM1_CLK               CLK_Peripheral_USART2
+#define EVAL_COM1_RxPin             GPIO_Pin_4
+#define EVAL_COM1_TxPin             GPIO_Pin_5
+#endif
 /*!
  * Possible power sources
  */

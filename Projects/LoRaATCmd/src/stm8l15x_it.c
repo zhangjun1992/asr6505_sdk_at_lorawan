@@ -34,6 +34,7 @@
 #include "linkwan.h"
 #include "at_command.h"
 #include <stdbool.h>
+#include "board.h"
 /** @addtogroup STM8L15x_StdPeriph_Examples
   * @{
   */
@@ -304,11 +305,33 @@ INTERRUPT_HANDLER(TIM2_UPD_OVF_TRG_BRK_IRQHandler, 19)
   * @param  None
   * @retval None
   */
+uint8_t atcmd[ATCMD_SIZE];
+int atcmd_index = 0;
+bool g_atcmd_processing = false;
+#ifdef _COSMIC_
+@svlreg INTERRUPT_HANDLER(TIM2_CAP_IRQHandler, 20)
+#else
 INTERRUPT_HANDLER(TIM2_CAP_IRQHandler, 20)
+#endif
 {
   /* In order to detect unexpected events during development,
      it is recommended to set a breakpoint on the following instruction.
   */
+  char ch;
+  if (USART_GetITStatus(USART2, USART_IT_RXNE) == SET)
+  {
+    ch = USART_ReceiveData8(USART2);
+    USART_ClearITPendingBit(USART2, USART_IT_RXNE);
+    if (g_atcmd_processing == true)
+    {
+			return;
+    }
+    if (atcmd_index >= 64)
+    {
+		  atcmd_index = 0;
+    }
+    atcmd[atcmd_index++] = ch;
+  }
 }
 
 /**
@@ -327,9 +350,7 @@ INTERRUPT_HANDLER(TIM3_UPD_OVF_TRG_BRK_IRQHandler, 21)
   * @param  None
   * @retval None
   */
-uint8_t atcmd[ATCMD_SIZE];
-int atcmd_index = 0;
-bool g_atcmd_processing = false;
+
 #ifdef _COSMIC_
 @svlreg INTERRUPT_HANDLER(TIM3_CAP_IRQHandler, 22)
 #else
@@ -341,6 +362,7 @@ INTERRUPT_HANDLER(TIM3_CAP_IRQHandler, 22)
   */
 	char ch;
 
+  //if (USART_GetITStatus(USART3, USART_IT_RXNE) == SET)EVAL_COM1
   if (USART_GetITStatus(USART3, USART_IT_RXNE) == SET)
   {
     ch = USART_ReceiveData8(USART3);
