@@ -374,7 +374,7 @@ static void print_dev_info(void)
                     (uint16_t)g_lwan_dev_keys_p->ota.appkey[14], (uint16_t)g_lwan_dev_keys_p->ota.appkey[15]);
     } else if(g_lwan_dev_config_p->modes.join_mode == JOIN_MODE_ABP){
         DBG_LINKWAN("ABP\r\n");
-        DBG_LINKWAN("DevAddr= %08X\r\n", (unsigned int)g_lwan_dev_keys_p->abp.devaddr);
+        DBG_LINKWAN("DevAddr= %04X%04X\r\n", (uint16_t)(g_lwan_dev_keys_p->abp.devaddr >> 16),(uint16_t)(g_lwan_dev_keys_p->abp.devaddr));
         DBG_LINKWAN("NwkSKey= ");
         for (i = 0; i < LORA_KEY_LENGTH; i++) {
             PRINTF_RAW("%02X", g_lwan_dev_keys_p->abp.nwkskey[i]);

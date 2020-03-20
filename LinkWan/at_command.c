@@ -22,7 +22,7 @@
 
 #define QUERY_CMD		0x01
 #define EXECUTE_CMD		0x02
-#define DESC_CMD        0x03
+#define DESC_CMD                0x03
 #define SET_CMD			0x04
 
 #define CONFIG_MANUFACTURER "ASR"
@@ -322,7 +322,7 @@ static int at_cdevaddr_func(int opt, int argc, char *argv[])
         case QUERY_CMD: {
             ret = LWAN_SUCCESS;
             lwan_dev_keys_get(DEV_KEYS_ABP_DEVADDR, &devaddr);
-            length = sprintf((char *)atcmd, "\r\n%s:%08X\r\nOK\r\n", LORA_AT_CDEVADDR, (unsigned int)devaddr);
+             length = sprintf((char *)atcmd, "\r\n%s:%04X%04X\r\nOK\r\n", LORA_AT_CDEVADDR, (uint16_t)(devaddr >> 16),(uint16_t)(devaddr));
             break;
         }
         case DESC_CMD: {
@@ -335,7 +335,7 @@ static int at_cdevaddr_func(int opt, int argc, char *argv[])
             
             length = hex2bin((const char *)argv[0], buf, 4);
             if (length == 4) {
-                uint32_t devaddr = buf[0] << 24 | buf[1] << 16 | buf[2] <<8 | buf[3];
+                devaddr = ((uint32_t)buf[0] << 24) | ((uint32_t)buf[1] << 16) | ((uint32_t)buf[2] <<8) | (uint32_t)buf[3];
                 if(lwan_dev_keys_set(DEV_KEYS_ABP_DEVADDR, &devaddr) == LWAN_SUCCESS) {
                     sprintf((char *)atcmd, "\r\nOK\r\n");
                     ret = LWAN_SUCCESS;
@@ -1183,7 +1183,7 @@ void linkwan_at_process(void)
 
 at_end:
 	if (LWAN_ERROR == ret)
-        sprintf((char *)atcmd, "\r\n%s%x\r\n", AT_ERROR, 1);
+        sprintf((char *)atcmd, "\r\nno this cmd Or other error%s%x\r\n", AT_ERROR, 1);
     
     linkwan_serial_output(atcmd, strlen((const char *)atcmd));        
     atcmd_index = 0;

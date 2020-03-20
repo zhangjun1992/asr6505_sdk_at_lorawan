@@ -493,15 +493,15 @@
                 <option>
                     <name>OOCOutputFormat</name>
                     <version>2</version>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>OCOutputOverride</name>
                     <state>0</state>
                 </option>
                 <option>
+                    <name>OCOutputOverride</name>
+                    <state>1</state>
+                </option>
+                <option>
                     <name>OOCOutputFile</name>
-                    <state>project.hex</state>
+                    <state>asr6505_lorawan20200311.s19</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>

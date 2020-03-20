@@ -905,14 +905,12 @@ for(i=0; i<16; i++) {
 }
 printf("\r\n"); 
 
-printf("devaddr: %08x\r\n", LoRaMacDevAddr);
-
+printf("devaddr: %04x%04X\r\n", (uint16_t)(LoRaMacDevAddr >> 16),(uint16_t)(LoRaMacDevAddr));
 printf("rxpayload: ");
 for(i=0; i<size; i++) {
     printf("%02x ", (uint16_t)LoRaMacRxPayload[i]);
 }
-
-printf("LoRaMacDevNonce: %08x\r\n", LoRaMacDevNonce);
+printf("LoRaMacDevNonce: %04x%04X\r\n", (uint16_t)(LoRaMacDevNonce >> 16),(uint16_t)(LoRaMacDevNonce));
 #endif
             }
             else

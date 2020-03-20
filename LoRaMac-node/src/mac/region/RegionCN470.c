@@ -346,7 +346,7 @@ void RegionCN470InitDefaults( InitType_t type )
             // 125 kHz channels
             for( i = 0; i < CN470_MAX_NB_CHANNELS; i++ )
             {
-                Channels[i].Frequency = 470300000 + i * 200000;
+                Channels[i].Frequency = 479900000 + i * 200000;
                 Channels[i].DrRange.Value = ( DR_5 << 4 ) | DR_0;
                 Channels[i].Band = 0;
             }
